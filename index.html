@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Table Example</title>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="MyTableController">
+      <table border="1">
+        <thead>
+          <tr>
+            <th ng-repeat="header in headers">
+              <header-component label="{{header.label}}"></header-component>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+            <td ng-repeat="header in headers">
+              <row-component value="{{user[header.key]}}"></row-component>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
